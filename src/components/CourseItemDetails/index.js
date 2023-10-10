@@ -4,20 +4,6 @@ import {Link} from 'react-router-dom'
 
 import Loader from 'react-loader-spinner'
 
-import {
-  Nel,
-  Logo,
-  View,
-  Vi,
-  Vd,
-  FailCon,
-  FailIm,
-  Fh,
-  Fp,
-  Fb,
-  Vh,
-} from './styledComponents'
-
 import './index.css'
 
 const apStatus = {
@@ -63,13 +49,13 @@ class CourseItemDetails extends Component {
     const {course} = this.state
     return (
       <div className="cr">
-        <View>
-          <Vi src={course.imageUrl} alt={course.name} />
+        <div className="View">
+          <img className="Vi" src={course.imageUrl} alt={course.name} />
           <div>
-            <Vh>{course.name}</Vh>
-            <Vd>{course.description}</Vd>
+            <h1 className="Vh">{course.name}</h1>
+            <p className="Vd">{course.description}</p>
           </div>
-        </View>
+        </div>
       </div>
     )
   }
@@ -83,24 +69,27 @@ class CourseItemDetails extends Component {
   failView = () => (
     <div>
       <Link to="/" className="link-el">
-        <Nel>
-          <Logo
+        <ul className="Nel">
+          <img
+            className="Vi"
             src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
             alt="website logo"
           />
-        </Nel>
+        </ul>
       </Link>
-      <FailCon>
-        <FailIm
+      <div className="FailCon">
+        <img
           src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
           alt="failure view"
         />
-        <Fh>Oops! Something Went wRONG</Fh>
-        <Fp>We cannot seem to find the page you are looking for</Fp>
-        <Fb type="button" onClick={this.getItem}>
+        <h1 className="Fh">Oops! Something Went wRONG</h1>
+        <p className="Fp">
+          We cannot seem to find the page you are looking for
+        </p>
+        <button className="Fb" type="button" onClick={this.getItem}>
           Retry
-        </Fb>
-      </FailCon>
+        </button>
+      </div>
     </div>
   )
 
@@ -122,12 +111,12 @@ class CourseItemDetails extends Component {
     return (
       <div>
         <Link to="/" className="link-el">
-          <Nel>
-            <Logo
+          <nav className="Nel">
+            <img
               src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
               alt="website logo"
             />
-          </Nel>
+          </nav>
         </Link>
         <div>{this.finalRender()}</div>
       </div>

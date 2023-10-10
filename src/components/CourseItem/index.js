@@ -4,17 +4,6 @@ import {Link} from 'react-router-dom'
 
 import Loader from 'react-loader-spinner'
 
-import {
-  Nel,
-  Logo,
-  FailCon,
-  FailIm,
-  Fh,
-  Fp,
-  Fb,
-  ListCon,
-} from './styledComponents'
-
 import Item from '../Item'
 
 import './index.css'
@@ -64,11 +53,11 @@ class CourseItem extends Component {
     return (
       <div className="s-con">
         <h1 className="header">Courses</h1>
-        <ListCon>
+        <ul className="ListCon">
           {courseList.map(i => (
             <Item details={i} key={i.id} />
           ))}
-        </ListCon>
+        </ul>
       </div>
     )
   }
@@ -76,24 +65,26 @@ class CourseItem extends Component {
   failView = () => (
     <div>
       <Link to="/" className="link-el">
-        <Nel>
-          <Logo
+        <nav className="Nel">
+          <img
             src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
             alt="website logo"
           />
-        </Nel>
+        </nav>
       </Link>
-      <FailCon>
-        <FailIm
+      <div className="FailCon">
+        <img
           src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
           alt="failure view"
         />
-        <Fh>Oops! Something Went wRONG</Fh>
-        <Fp>We cannot seem to find the page you are looking for</Fp>
-        <Fb type="button" onClick={this.getData}>
+        <h1 className="Fh">Oops! Something Went wRONG</h1>
+        <p className="Fp">
+          We cannot seem to find the page you are looking for
+        </p>
+        <button className="Fb" type="button" onClick={this.getData}>
           Retry
-        </Fb>
-      </FailCon>
+        </button>
+      </div>
     </div>
   )
 
@@ -115,12 +106,12 @@ class CourseItem extends Component {
     return (
       <div>
         <Link to="/" className="link-el">
-          <Nel>
-            <Logo
+          <nav className="Nel">
+            <img
               src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
               alt="website logo"
             />
-          </Nel>
+          </nav>
         </Link>
         {this.finalRender()}
       </div>

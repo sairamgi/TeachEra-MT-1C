@@ -1,19 +1,17 @@
 import {Link} from 'react-router-dom'
 
-import {Ci, Cn, Li} from './styledComponents'
-
 import './index.css'
 
 const Item = props => {
   const {details} = props
   const {id, name, logoUrl} = details
   return (
-    <Li>
+    <li className="Li">
       <Link to={`/courses/${id}`} className="link-el">
-        <Ci src={logoUrl} alt={name} />
-        <Cn>{name}</Cn>
+        <img className="Ci" src={logoUrl} alt={name} />
+        <p className="Cn">{name}</p>
       </Link>
-    </Li>
+    </li>
   )
 }
 
